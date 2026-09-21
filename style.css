@@ -1,3 +1,168 @@
-h1 {
-  color: blue;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 20px;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-bottom: 30px;
+  gap: 15px;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2.5rem;
+  color: #333;
+}
+
+#open-modal-btn {
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+#open-modal-btn:hover {
+  background-color: #0056b3;
+}
+
+#library-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.book-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid #ccc;
+  padding: 15px;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+}
+
+.uid {
+  display: block;
+  color: #777;
+  font-size: 10px;
+  word-break: break-all;
+  margin-top: 10px;
+}
+
+/* Modal Popup Window Background */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; /* Full width and height */
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Modal Form Container Box */
+.modal-content {
+  background-color: #fff;
+  margin: 15% auto;
+  padding: 20px;
+  width: 300px;
+  border-radius: 8px;
+  position: relative;
+}
+
+form label,
+form input,
+form button {
+  display: block;
+  width: 100%;
+  margin-top: 10px;
+}
+
+/* Row wrapper layout for card actions */
+.card-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.card-actions button {
+  flex: 1;
+  padding: 8px 5px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 13px;
+  transition: opacity 0.2s ease;
+}
+
+.card-actions button:hover {
+  opacity: 0.85;
+}
+
+/* Read / Unread Status Button Theme Variants */
+.status-btn.status-read {
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+}
+
+.status-btn.status-unread {
+  background-color: #fff3cd;
+  color: #856404;
+  border: 1px solid #ffeeba;
+}
+
+/* Remove Button Theme Variant */
+.remove-btn {
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+}
+
+/* Layout rule for checkbox on the pop-up form */
+.form-checkbox-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 15px 0;
+}
+
+.form-checkbox-group input {
+  width: auto;
+  margin: 0;
+}
+
+/* Layout rule for checkbox inside the individual book cards */
+.display-checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: bold;
+  cursor: pointer;
+  user-select: none;
+}
+
+/* Visual cue: Give cards that are completed a subtle styling distinction */
+.book-card.read-card {
+  border-color: #c3e6cb;
+  background-color: #f4faf6;
 }
